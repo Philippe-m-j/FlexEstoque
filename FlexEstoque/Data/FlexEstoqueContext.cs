@@ -9,6 +9,8 @@ namespace FlexEstoque.Data
 {
     public class FlexEstoqueContext : DbContext
     {
+        internal readonly object Usuarios;
+
         public FlexEstoqueContext (DbContextOptions<FlexEstoqueContext> options)
             : base(options)
         {
@@ -29,5 +31,6 @@ namespace FlexEstoque.Data
         }
 
         public DbSet<FlexEstoque.Models.Produto> Produto { get; set; } = default!;
+        public DbSet<FlexEstoque.Models.Usuario> Models { get; set; } = default!;
     }
 }

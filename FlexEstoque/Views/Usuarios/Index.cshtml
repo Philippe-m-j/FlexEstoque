@@ -1,41 +1,40 @@
-﻿@model IEnumerable<FlexEstoque.Models.Produto>
+﻿@model IEnumerable<FlexEstoque.Models.Usuario>
 
 @{
-    ViewData["Title"] = "Produtos";
+    ViewData["Title"] = "Usuários";
 }
 
-<h1 class="display-2"> Cadastro de Produtos</h1>
+<h1 class="display-2"> Cadastro de Usuários</h1>
 
 <p>
     <button type="button" class="btn btn-outline-success">
         <a asp-action="Create">Criar Novo Produto</a>
     </button>
 </p>
-
 <table class="table">
     <thead class="table-dark">
         <tr>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.NomeProduto)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.CodigoProduto)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.DescricaoProduto)
+                @Html.DisplayNameFor(model => model.Login)
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.ValorProduto)
+                @Html.DisplayNameFor(model => model.Perfil)
             </th>
+@*             <th scope="col">
+                @Html.DisplayNameFor(model => model.Senha)
+            </th> *@
             <th scope="col">
-                @Html.DisplayNameFor(model => model.ValidadeProduto)
+                @Html.DisplayNameFor(model => model.DataCadastro)
             </th>
-            <th scope="col">
-                @Html.DisplayNameFor(model => model.EstoqueMinimo)
-            </th>
-            <th scope="col">
-                @Html.DisplayNameFor(model => model.EstoqueMaximo)
-            </th>
+@*             <th scope="col">
+                @Html.DisplayNameFor(model => model.DataAtualizacao)
+            </th> *@
             <th></th>
         </tr>
     </thead>
@@ -44,26 +43,26 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                    @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CodigoProduto)
+                    @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DescricaoProduto)
+                    @Html.DisplayFor(modelItem => item.Login)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ValorProduto)
+                    @Html.DisplayFor(modelItem => item.Perfil)
                 </td>
+@*                 <td>
+                    @Html.DisplayFor(modelItem => item.Senha)
+                </td> *@
                 <td>
-                    @Html.DisplayFor(modelItem => item.ValidadeProduto)
+                    @Html.DisplayFor(modelItem => item.DataCadastro)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EstoqueMinimo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EstoqueMaximo)
-                </td>
+@*                 <td>
+                    @Html.DisplayFor(modelItem => item.DataAtualizacao)
+                </td> *@
                 <td>
                     <button type="button" class="btn btn-outline-primary">
                         <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
