@@ -10,82 +10,89 @@ using FlexEstoque.Models;
 
 namespace FlexEstoque.Controllers
 {
-    public class ProdutoesController : Controller
+    public class UsuariosController : Controller
     {
         private readonly FlexEstoqueContext _context;
 
-        public ProdutoesController(FlexEstoqueContext context)
+        public UsuariosController(FlexEstoqueContext context)
         {
-            _context = context;
+            this._context = context;
         }
-        
+
+
+        // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-              return _context.Produto != null ? 
-                          View(await _context.Produto.ToListAsync()) :
-                          Problem("Entity set 'FlexEstoqueContext.Produto'  is null.");
+              return _context.Models != null ? 
+                          View(await _context.Models.ToListAsync()) :
+                          Problem("Entity set 'FlexEstoqueContext.Models'  is null.");
         }
 
-       
+        // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Produto == null)
+            if (id == null || _context.Models == null)
             {
                 return NotFound();
             }
 
-            var produto = await _context.Produto
+            var usuario = await _context.Models
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(produto);
+            return View(usuario);
         }
 
-        
+        // GET: Usuarios/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        
+        // POST: Usuarios/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NomeProduto,CodigoProduto,DescricaoProduto,ValorProduto,ValidadeProduto,EstoqueMinimo,EstoqueMaximo")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,Login,Perfil,Senha,DataCadastro,DataAtualizacao")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(produto);
+                _context.Add(usuario);
+                usuario.DataCadastro = DateTime.Now;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(produto);
+            return View(usuario);
         }
 
-        
+        // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Produto == null)
+            if (id == null || _context.Models == null)
             {
                 return NotFound();
             }
 
-            var produto = await _context.Produto.FindAsync(id);
-            if (produto == null)
+            var usuario = await _context.Models.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
-            return View(produto);
+            return View(usuario);
         }
 
-       
+        // POST: Usuarios/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NomeProduto,CodigoProduto,DescricaoProduto,ValorProduto,ValidadeProduto,EstoqueMinimo,EstoqueMaximo")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Login,Perfil,Senha,DataCadastro,DataAtualizacao")] Usuario usuario)
         {
-            if (id != produto.Id)
+            if (id != usuario.Id)
             {
                 return NotFound();
             }
@@ -94,12 +101,12 @@ namespace FlexEstoque.Controllers
             {
                 try
                 {
-                    _context.Update(produto);
+                    _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProdutoExists(produto.Id))
+                    if (!UsuarioExists(usuario.Id))
                     {
                         return NotFound();
                     }
@@ -110,49 +117,49 @@ namespace FlexEstoque.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(produto);
+            return View(usuario);
         }
 
-       
+        // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Produto == null)
+            if (id == null || _context.Models == null)
             {
                 return NotFound();
             }
 
-            var produto = await _context.Produto
+            var usuario = await _context.Models
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(produto);
+            return View(usuario);
         }
 
-        
+        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Produto == null)
+            if (_context.Models == null)
             {
-                return Problem("Entity set 'FlexEstoqueContext.Produto'  is null.");
+                return Problem("Entity set 'FlexEstoqueContext.Models'  is null.");
             }
-            var produto = await _context.Produto.FindAsync(id);
-            if (produto != null)
+            var usuario = await _context.Models.FindAsync(id);
+            if (usuario != null)
             {
-                _context.Produto.Remove(produto);
+                _context.Models.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProdutoExists(int id)
+        private bool UsuarioExists(int id)
         {
-          return (_context.Produto?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Models?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
