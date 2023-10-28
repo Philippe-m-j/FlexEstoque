@@ -12,6 +12,8 @@ namespace FlexEstoque.Models
         public string CodigoProduto { get; set; }
         public string DescricaoProduto { get; set; }
         public string ValorProduto { get; set; }
+        public int? CategoriaProdutoId { get; set; }
+        public virtual CategoriaProduto Categoria { get; set; }
         public DateTime ValidadeProduto { get; set; }
         public int EstoqueMinimo { get; set; }
         public int EstoqueMaximo { get; set; }

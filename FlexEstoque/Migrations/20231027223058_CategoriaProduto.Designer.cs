@@ -3,6 +3,7 @@ using System;
 using FlexEstoque.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,12 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FlexEstoque.Migrations
 {
     [DbContext(typeof(FlexEstoqueContext))]
-    partial class FlexEstoqueContextModelSnapshot : ModelSnapshot
+    [Migration("20231027223058_CategoriaProduto")]
+    partial class CategoriaProduto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.12");
 
             modelBuilder.Entity("FlexEstoque.Models.CategoriaProduto", b =>
                 {
@@ -62,8 +65,6 @@ namespace FlexEstoque.Migrations
                     b.Property<string>("ValorProduto")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("CategoriaProutoId");
 
                     b.HasKey("Id");
 
