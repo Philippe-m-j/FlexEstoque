@@ -4,7 +4,7 @@
     ViewData["Title"] = "Produtos";
 }
 
-<h1 class="display-2"> Cadastro de Produtos</h1>
+<h1 class="display-7"> Cadastro de Produtos</h1>
 
 <p>
     <button type="button" class="btn btn-outline-success">
@@ -33,9 +33,9 @@
             <th scope="col">
                 @Html.DisplayNameFor(model => model.EstoqueMinimo)
             </th>
-            <th scope="col">
+@*             <th scope="col">
                 @Html.DisplayNameFor(model => model.EstoqueMaximo)
-            </th>
+            </th> *@
             <th></th>
         </tr>
     </thead>
@@ -61,9 +61,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EstoqueMinimo)
                 </td>
-                <td>
+@*                 <td>
                     @Html.DisplayFor(modelItem => item.EstoqueMaximo)
-                </td>
+                </td> *@
                 <td>
                     <button type="button" class="btn btn-outline-primary">
                         <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
