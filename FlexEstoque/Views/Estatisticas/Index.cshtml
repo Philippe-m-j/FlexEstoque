@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FlexEstoque.Models.Estatistica>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="display-7"> Estatística</h1>
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", { packages: ['corechart'], 'language': 'pt-br' });
+    google.charts.setOnLoadCallback(drawChart1);
+    google.charts.setOnLoadCallback(drawChart2);
+    function drawChart1() {
+        var data = google.visualization.arrayToDataTable([
+            ["Element", "Density", { role: "style" }],
+            ["Caneta Azul", 22, "#0000FF"],
+            ["Caneta Preta", 18, "#000000"],
+            ["Caneta Vermelha", 8, "#8B0000"],
+            ["Tinta de Carimbo", 10, "color: #e5e4e2"],
+            ["Detergente", 5, "#E0FFFF"],
+            ["Água Sanitaria", 3, "#228B22"],
+            ["Bucha de limpeza", 9, "#F0E68C"],
+            ["Sabão Liquido 1L", 4, "color: #7CFC00"]
+
+
+        ]);
+
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+            {
+                calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation"
+            },
+            2]
+        );
+
+        var options = {
+            title: "Quantidade de Produtos",
+            width: 600,
+            height: 400,
+            bar: { groupWidth: "95%" },
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+    }
+</script>
+<div id="columnchart_values" style="width: 1200px; height: 300px;"></div>
