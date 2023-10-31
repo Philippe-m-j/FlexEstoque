@@ -3,24 +3,106 @@
 
 }
 
-<div class="text-center">
-    <h1 class="display-4"><b>FlexEstoque</b></h1>
-</div>
-<div class="text-black">
-    <p>
-        O FlexEstoque é a solução definitiva para o gerenciamento eficaz do estoque da sua empresa.
-        Seja você um pequeno negócio local ou uma empresa de médio porte,
-        nosso aplicativo foi projetado para simplificar e aprimorar o controle de estoque,
-        proporcionando maior eficiência operacional e economia de tempo.
+<header class="bg-light rounded-5 py-5 p-n1">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+            <div class="col-lg-8 col-xl-7 col-xxl-6">
+                <div class="my-5 text-center text-xl-start">
+                    <h1 class="display-5 fw-bolder text-dark mb-2">FLEX ESTOQUE</h1>
+                    <p class="lead fw-normal text-dark-50 mb-4">
+                        O FlexEstoque é a solução definitiva para o gerenciamento eficaz do estoque da sua empresa.
+                        Seja você um pequeno negócio local ou uma empresa de médio porte,
+                        nosso aplicativo foi projetado para simplificar e aprimorar o controle de estoque,
+                        proporcionando maior eficiência operacional e economia de tempo.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://cakeerp.com/wp-content/uploads/2018/12/gest%C3%A3o-de-estoque.png" alt="..."></div>
+        </div>
+    </div>
+</header>
 
-    </p>
-</div>
-<div>
-    <h1>Recursos Principais:</h1>
-    <p><b>Gerenciamento de Estoque Simples:</b> Com o FlexEstoque, você pode controlar facilmente todas as suas mercadorias e produtos em um só lugar. Adicione, edite e remova itens com apenas alguns toques.</p>
-    <p><b>Rastreamento de Inventário em Tempo Real:</b> Mantenha um registro preciso do seu estoque com atualizações em tempo real. Saiba sempre quais produtos estão disponíveis e suas quantidades.</p>
-    <p><b>Segurança de Dados:</b> Suas informações são protegidas por criptografia de ponta a ponta, garantindo que seus dados estejam seguros e confidenciais.</p>
-    <p><b>Suporte ao Cliente:</b> Oferecemos suporte dedicado para ajudá-lo a resolver qualquer dúvida ou problema rapidamente.</p>
+<section class="py-5" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Recursos Principais:</h2></div>
+            <div class="col-lg-8">
+                <div class="row gx-5 row-cols-1 row-cols-md-2">
+                    <div class="col mb-5 h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h5">Gerenciamento de Estoque Simples</h2>
+                        <p class="mb-0">Com o FlexEstoque, você pode controlar facilmente todas as suas mercadorias e produtos em um só lugar. Adicione, edite e remova itens com apenas alguns toques.</p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                        <h2 class="h5">Rastreamento de Inventário em Tempo Real</h2>
+                        <p class="mb-0">Mantenha um registro preciso do seu estoque com atualizações em tempo real. Saiba sempre quais produtos estão disponíveis e suas quantidades.</p>
+                    </div>
+                    <div class="col mb-5 mb-md-0 h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h5">Segurança de Dados</h2>
+                        <p class="mb-0">Suas informações são protegidas por criptografia de ponta a ponta, garantindo que seus dados estejam seguros e confidenciais.</p>
+                    </div>
+                    <div class="col h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h5">Suporte ao Cliente</h2>
+                        <p class="mb-0">Oferecemos suporte dedicado para ajudá-lo a resolver qualquer dúvida ou problema rapidamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="divider">
+</section>
 
-    <p>O <b>FlexEstoque</b> é a ferramenta ideal para simplificar o gerenciamento do seu estoque e garantir que sua empresa esteja sempre preparada para atender às demandas dos clientes. Economize tempo, reduza custos e melhore a eficiência com o FlexEstoque. Experimente hoje mesmo e veja a diferença que podemos fazer para o seu negócio.</p>
-</div>
+
+<section class="page-section" id="contact">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center">
+                <h2 class="mt-0">Fale conosco!</h2>
+                
+                <p class="text-muted mb-5">Pronto para dar o proximo passo na sua empresa? Nos envie uma mensagem e entraremos em contato o mais breve possível!</p>
+            </div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-6">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <!--Input Nome-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="name">Nome Completo</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                    </div>
+                    <!-- Input Email-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" data-sb-can-submit="no">
+                        <label for="email">Email</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                    </div>
+                    <!--Input Celular-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="tel" placeholder="(21)99456-7890" data-sb-validations="required" data-sb-can-submit="no">
+                        <label for="phone">Telefone</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                    </div>
+                    <!--Input mensagem-->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no"></textarea>
+                        <label for="message">Mensagem</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                    </div>
+                    <!-- Submit Button-->
+                    <div class="d-grid"><button class="btn btn-primary btn-xl enable" id="submitButton" type="submit">Submit</button></div>
+                </form>
+            </div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                <div>+55 (31) 99123-4567</div>
+            </div>
+        </div>
+    </div>
+</section>
