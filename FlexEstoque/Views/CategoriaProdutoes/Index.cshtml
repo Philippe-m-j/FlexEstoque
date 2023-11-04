@@ -6,10 +6,16 @@
 
 <h1 class="display-7"> Categoria Produto</h1>
 
-<p>
-    <a asp-action="Create">Criar Novo</a>
-</p>
-<table class="table">
+<div class="container py-4">
+    <p>
+        <button type="button" class="btn btn-outline-success">
+            <a asp-action="Create">Criar Novo</a>
+        </button>
+    </p>
+</div>
+
+
+<table class="table table-bordered">
     <thead class="table-dark">
         <tr>
             <th scope="col">
@@ -30,10 +36,10 @@
                         <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                     </button> |
                     <button type="button" class="btn btn-outline-info">
-                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
                     </button> |
                     <button type="button" class="btn btn-outline-danger">
-                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
                     </button>
                 </td>
             </tr>
