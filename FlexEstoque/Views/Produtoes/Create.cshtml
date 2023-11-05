@@ -1,4 +1,4 @@
-﻿@model FlexEstoque.Models.Produto
+﻿@model FlexEstoque.Models.ProdutosModel
 
 @{
     ViewData["Title"] = "Criar Produto";
@@ -42,15 +42,27 @@
                 <input asp-for="EstoqueMinimo" class="form-control" />
                 <span asp-validation-for="EstoqueMinimo" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="EstoqueMaximo" class="control-label"></label>
-                <input asp-for="EstoqueMaximo" class="form-control" />
-                <span asp-validation-for="EstoqueMaximo" class="text-danger"></span>
-            </div>
+            @*             <div class="form-group">
+            <label asp-for="EstoqueMaximo" class="control-label"></label>
+            <input asp-for="EstoqueMaximo" class="form-control" />
+            <span asp-validation-for="EstoqueMaximo" class="text-danger"></span>
+            </div> *@
+
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
         </form>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="Categoria" class="control-label"></label>
+            <select asp-for="CategoriaProdutoId" asp-items="@(new SelectList(Model.ListaCategoria,"Id","Descricao"))" class="form-control">
+@*             @foreach (var item in Model.ListaCategoria)
+            {
+                <options value="@item.Id">@item.Descricao</options>
+            } *@
+            </select>
+        </div>
     </div>
 </div>
 
@@ -59,5 +71,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

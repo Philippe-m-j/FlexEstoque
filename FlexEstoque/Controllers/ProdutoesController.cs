@@ -47,7 +47,9 @@ namespace FlexEstoque.Controllers
         
         public IActionResult Create()
         {
-            return View();
+            ProdutosModel model = new ProdutosModel();
+            model.ListaCategoria = _context.CategoriaProduto.ToList();
+            return View(model);
         }
 
         
