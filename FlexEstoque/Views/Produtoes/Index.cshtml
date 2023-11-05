@@ -33,9 +33,9 @@
             <th scope="col">
                 @Html.DisplayNameFor(model => model.EstoqueMinimo)
             </th>
-@*             <th scope="col">
-                @Html.DisplayNameFor(model => model.EstoqueMaximo)
-            </th> *@
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.CategoriaProdutoId)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -61,9 +61,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EstoqueMinimo)
                 </td>
-@*                 <td>
-                    @Html.DisplayFor(modelItem => item.EstoqueMaximo)
-                </td> *@
+                <td>
+                    @item.Categoria.Descricao
+                </td>
                 <td>
                     <button type="button" class="btn btn-outline-primary">
                         <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>

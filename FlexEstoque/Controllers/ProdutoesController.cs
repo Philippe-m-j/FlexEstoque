@@ -19,8 +19,21 @@ namespace FlexEstoque.Controllers
             _context = context;
         }
         
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string query, string tipoPesquisa)
         {
+            if (string.IsNullOrEmpty(query))
+            {
+                return View(_context.Produto.Include(a => a.Categoria).ToList());
+            }
+            else if(tipoPesquisa == "Todos")
+            {
+                return View(_context.Produto.Where(a => a.DescricaoProduto.Contains(query)).Include(a => a.Categoria));
+            }
+            else
+            {
+                return View(_context.Produto.Include(a => a.Categoria).ToList());
+            }
+
               return _context.Produto != null ? 
                           View(await _context.Produto.ToListAsync()) :
                           Problem("Entity set 'FlexEstoqueContext.Produto'  is null.");
@@ -69,6 +82,8 @@ namespace FlexEstoque.Controllers
         
         public async Task<IActionResult> Edit(int? id)
         {
+
+
             if (id == null || _context.Produto == null)
             {
                 return NotFound();
