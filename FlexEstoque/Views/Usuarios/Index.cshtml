@@ -4,77 +4,79 @@
     ViewData["Title"] = "Usuários";
 }
 
-<h1 class="display-2"> Cadastro de Usuários</h1>
+<h1 class="display-7"> Cadastro de Usuários</h1>
 
-<p>
-    <button type="button" class="btn btn-outline-success">
-        <a asp-action="Create">Criar Novo Produto</a>
-    </button>
-</p>
-<table class="table">
-    <thead class="table-dark">
-        <tr>
-            <th scope="col">
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th scope="col">
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th scope="col">
-                @Html.DisplayNameFor(model => model.Login)
-            </th>
-            <th scope="col">
-                @Html.DisplayNameFor(model => model.Perfil)
-            </th>
-@*             <th scope="col">
-                @Html.DisplayNameFor(model => model.Senha)
-            </th> *@
-            <th scope="col">
-                @Html.DisplayNameFor(model => model.DataCadastro)
-            </th>
-@*             <th scope="col">
-                @Html.DisplayNameFor(model => model.DataAtualizacao)
-            </th> *@
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="container py-4">
+    <p>
+        <button type="button" class="btn btn-outline-success">
+            <a asp-action="Create">Criar Novo Produto</a>
+        </button>
+    </p>
+</div>
+    <table class="table table-bordered">
+        <thead class="table-dark">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Login)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Perfil)
-                </td>
-@*                 <td>
-                    @Html.DisplayFor(modelItem => item.Senha)
-                </td> *@
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataCadastro)
-                </td>
-@*                 <td>
-                    @Html.DisplayFor(modelItem => item.DataAtualizacao)
-                </td> *@
-                <td>
-                    <button type="button" class="btn btn-outline-primary">
-                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                    </button> |
-                    <button type="button" class="btn btn-outline-info">
-                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
-                    </button> |
-                    <button type="button" class="btn btn-outline-danger">
-                        <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
-                    </button>
-                </td>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Login)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Perfil)
+                </th>
+                @*             <th scope="col">
+                        @Html.DisplayNameFor(model => model.Senha)
+                    </th> *@
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DataCadastro)
+                </th>
+                @*             <th scope="col">
+                        @Html.DisplayNameFor(model => model.DataAtualizacao)
+                    </th> *@
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Login)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Perfil)
+                    </td>
+                    @*                 <td>
+                            @Html.DisplayFor(modelItem => item.Senha)
+                        </td> *@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataCadastro)
+                    </td>
+                    @*                 <td>
+                            @Html.DisplayFor(modelItem => item.DataAtualizacao)
+                        </td> *@
+                    <td>
+                        <button type="button" class="btn btn-outline-primary">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        </button> |
+                        <button type="button" class="btn btn-outline-info">
+                            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        </button> |
+                        <button type="button" class="btn btn-outline-danger">
+                            <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

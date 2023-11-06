@@ -32,5 +32,8 @@ namespace FlexEstoque.Data
 
         public DbSet<FlexEstoque.Models.Produto> Produto { get; set; } = default!;
         public DbSet<FlexEstoque.Models.Usuario> Models { get; set; } = default!;
+        public DbSet<FlexEstoque.Models.CategoriaProduto> CategoriaProduto { get; set; } = default!;
+        public DbSet<FlexEstoque.Models.Estatistica> Estatistica { get; set; } = default!;
+
     }
 }
